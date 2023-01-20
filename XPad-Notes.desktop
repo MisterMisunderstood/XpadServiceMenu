@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin,*,all/allfiles
+MimeType=all/all;
+Actions=new-note-xpad;create-txt
+Icon=xpad
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=false
+X-KDE-Submenu[pt_BR]=Notas do XPad
+X-KDE-Submenu[en]=Xpad Notes
+Encoding=UTF-8
+Terminal=false
+
+[Desktop Action new-note-xpad]
+Name[pt_BR]=Nova Nota
+Name[en]=New Note
+Icon=xpad
+Exec=xpad --new
+
+[Desktop Action create-txt]
+Name[pt_BR]=Criar nota deste arquivo
+Name[en]=Make note of this file
+Icon=xpad
+Exec=cat "%f" > /tmp/rascxpad.txt | xpad --new-from-file=/tmp/rascxpad.txt
